@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
+
     public partial class Form1 : Form
     {
+
+        string playerX = "";
+        string playerO = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +37,7 @@ namespace TicTacToe
             OnOffBtn(false);
         }
 
+        //Funcionalidad a cada cuadro para marcar signo
         private void OnOffBtn(bool onoff)
         {
             a1.Enabled = onoff;
@@ -82,12 +88,16 @@ namespace TicTacToe
 
         private void Ingresar()
         {
+            //Cuando ninguno de los jugadores ingresa un nombre
             if (txtUser1.Text == "" && txtUser2.Text == "")
             {
+                //Mensaje de advertencia
                 MessageBox.Show("El nombre de los jugadores no puede ser null", "Nombre invalido"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
             }
+
+            //En caso de que cada usuario no ingrese un nombre
             else
             {
                 if (txtUser1.Text == "")
@@ -101,6 +111,63 @@ namespace TicTacToe
                     MessageBox.Show("El nombre del Player2 no puede ser null", "Nombre invalido"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
+                }
+            }
+
+            //Cuando el usuario ingresa un nombre
+            if (txtUser1.Text != "" && txtUser2.Text != "")
+            {
+                //Seleccion de X a Player1 y O a Player 2
+                if (RbUser1X.Checked && RbUser2O.Checked)
+                {
+                    //Iguala el signo a cada jugador
+                    playerX = txtUser1.Text;
+                    playerO = txtUser2.Text;
+
+                    //Desactiva el otro signo que no se escogio
+                    RbUser1O.Enabled = false;
+                    RbUser2X.Enabled = false;
+                }
+
+                //Seleccion de O a Player1 y X a Player 2
+                if (RbUser1O.Checked && RbUser2X.Checked)
+                {
+                    //Iguala el signo a cada jugador
+                    playerO = txtUser1.Text;
+                    playerX = txtUser2.Text;
+
+                    //Desactiva el otro signo que no se escogio
+                    RbUser1X.Enabled = false;
+                    RbUser2O.Enabled = false;
+                }
+
+
+                //En caso de que seleccionen X
+                if (RbUser1X.Checked && RbUser2X.Checked)
+                {
+                    //Mensaje de advertencia
+                    MessageBox.Show("Solo un jugador puede escoger la letra X", "Escoja una letra diferente"
+                   , MessageBoxButtons.OK
+                   , MessageBoxIcon.Information);
+                }
+
+                //En caso de que seleccionen O
+                if (RbUser1O.Checked && RbUser2O.Checked)
+                {
+                    //Mensaje de advertencia
+                    MessageBox.Show("Solo un jugador puede escoger la letra O", "Escoja una letra diferente"
+                   , MessageBoxButtons.OK
+                   , MessageBoxIcon.Information);
+                }
+
+
+                //En caso de no seleccionar signo, primer escenario
+                if (RbUser1X.Checked == false && RbUser2O.Checked == false || RbUser2X.Checked == false && RbUser1O.Checked == false)
+                {
+                    //Mensaje de advertencia
+                    MessageBox.Show("Se debe escoger una letra para jugar", "Escoja una letra"
+                   , MessageBoxButtons.OK
+                   , MessageBoxIcon.Information);
                 }
             }
         }
