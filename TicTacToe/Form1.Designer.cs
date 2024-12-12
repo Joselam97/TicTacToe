@@ -56,6 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnReiniciar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,6 +73,7 @@
             this.a1.Size = new System.Drawing.Size(90, 90);
             this.a1.TabIndex = 0;
             this.a1.UseVisualStyleBackColor = true;
+            this.a1.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // a2
             // 
@@ -79,6 +82,7 @@
             this.a2.Size = new System.Drawing.Size(90, 90);
             this.a2.TabIndex = 1;
             this.a2.UseVisualStyleBackColor = true;
+            this.a2.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // a3
             // 
@@ -87,6 +91,7 @@
             this.a3.Size = new System.Drawing.Size(90, 90);
             this.a3.TabIndex = 2;
             this.a3.UseVisualStyleBackColor = true;
+            this.a3.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // b3
             // 
@@ -95,6 +100,7 @@
             this.b3.Size = new System.Drawing.Size(90, 90);
             this.b3.TabIndex = 5;
             this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // b2
             // 
@@ -103,6 +109,7 @@
             this.b2.Size = new System.Drawing.Size(90, 90);
             this.b2.TabIndex = 4;
             this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // b1
             // 
@@ -111,6 +118,7 @@
             this.b1.Size = new System.Drawing.Size(90, 90);
             this.b1.TabIndex = 3;
             this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // c3
             // 
@@ -119,6 +127,7 @@
             this.c3.Size = new System.Drawing.Size(90, 90);
             this.c3.TabIndex = 8;
             this.c3.UseVisualStyleBackColor = true;
+            this.c3.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // c2
             // 
@@ -127,6 +136,7 @@
             this.c2.Size = new System.Drawing.Size(90, 90);
             this.c2.TabIndex = 7;
             this.c2.UseVisualStyleBackColor = true;
+            this.c2.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // c1
             // 
@@ -135,7 +145,7 @@
             this.c1.Size = new System.Drawing.Size(90, 90);
             this.c1.TabIndex = 6;
             this.c1.UseVisualStyleBackColor = true;
-            this.c1.Click += new System.EventHandler(this.button9_Click);
+            this.c1.Click += new System.EventHandler(this.Buttons_Click);
             // 
             // panel1
             // 
@@ -157,6 +167,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnReiniciar);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnNewGame);
             this.groupBox1.Controls.Add(this.txtUser2);
@@ -171,10 +183,10 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Location = new System.Drawing.Point(411, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 533);
+            this.groupBox1.Size = new System.Drawing.Size(280, 531);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nombre de Jugadores";
+            this.groupBox1.Text = "Players";
             // 
             // pictureBox1
             // 
@@ -191,11 +203,11 @@
             // 
             this.btnNewGame.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnNewGame.Location = new System.Drawing.Point(93, 464);
+            this.btnNewGame.Location = new System.Drawing.Point(93, 467);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(99, 35);
             this.btnNewGame.TabIndex = 9;
-            this.btnNewGame.Text = "Iniciar";
+            this.btnNewGame.Text = "New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
@@ -294,9 +306,9 @@
             this.Player2.AutoSize = true;
             this.Player2.Location = new System.Drawing.Point(102, 356);
             this.Player2.Name = "Player2";
-            this.Player2.Size = new System.Drawing.Size(80, 18);
+            this.Player2.Size = new System.Drawing.Size(72, 18);
             this.Player2.TabIndex = 3;
-            this.Player2.Text = "Jugador 2";
+            this.Player2.Text = "Player 2";
             this.Player2.Click += new System.EventHandler(this.label3_Click);
             // 
             // Player1
@@ -305,9 +317,9 @@
             this.Player1.ForeColor = System.Drawing.SystemColors.Control;
             this.Player1.Location = new System.Drawing.Point(104, 137);
             this.Player1.Name = "Player1";
-            this.Player1.Size = new System.Drawing.Size(80, 18);
+            this.Player1.Size = new System.Drawing.Size(72, 18);
             this.Player1.TabIndex = 2;
-            this.Player1.Text = "Jugador 1";
+            this.Player1.Text = "Player 1";
             this.Player1.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox2
@@ -351,6 +363,31 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "label3";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpiar.Location = new System.Drawing.Point(23, 467);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(99, 35);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Text = "Clean";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Visible = false;
+            // 
+            // btnReiniciar
+            // 
+            this.btnReiniciar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReiniciar.Location = new System.Drawing.Point(163, 467);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(99, 35);
+            this.btnReiniciar.TabIndex = 11;
+            this.btnReiniciar.Text = "Restart";
+            this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.Visible = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,7 +395,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImage = global::TicTacToe.Properties.Resources.abstract_blur_gradient_background_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(735, 603);
+            this.ClientSize = new System.Drawing.Size(708, 557);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -414,6 +451,8 @@
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnReiniciar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

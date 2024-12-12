@@ -16,6 +16,8 @@ namespace TicTacToe
 
         string playerX = "";
         string playerO = "";
+        bool cambio = true;
+        int empate = 0;
 
         public Form1()
         {
@@ -76,11 +78,6 @@ namespace TicTacToe
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNewGame_Click(object sender, EventArgs e)
         {
             Ingresar();
@@ -127,6 +124,9 @@ namespace TicTacToe
                     //Desactiva el otro signo que no se escogio
                     RbUser1O.Enabled = false;
                     RbUser2X.Enabled = false;
+
+                    //Inicializar
+                    PlayGame();
                 }
 
                 //Seleccion de O a Player1 y X a Player 2
@@ -165,11 +165,110 @@ namespace TicTacToe
                 if (RbUser1X.Checked == false && RbUser2O.Checked == false || RbUser2X.Checked == false && RbUser1O.Checked == false)
                 {
                     //Mensaje de advertencia
-                    MessageBox.Show("Se debe escoger una letra para jugar", "Escoja una letra"
+                    MessageBox.Show("Cada jugador debe seleccionar una letra", "Escoja una letra"
                    , MessageBoxButtons.OK
                    , MessageBoxIcon.Information);
                 }
             }
+        }
+
+        //Agrega nombre a los jugadores
+        private void PlayGame()
+        {
+            Player1.Text = txtUser1.Text;
+            Player2.Text = txtUser2.Text;
+
+            groupBox1.Text = "Score";
+
+            btnLimpiar.Visible = true;
+            btnReiniciar.Visible = true;
+
+            btnNewGame.Visible = false;
+            txtUser1.Visible = false;
+            txtUser2.Visible = false;
+
+            //Mensaje de advertencia
+            MessageBox.Show("Empieza " + playerX, "Informacion"
+           , MessageBoxButtons.OK
+           , MessageBoxIcon.Information);
+
+            OnOffBtn(true);
+        }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Representa todos los botones
+        private void Buttons_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (cambio)
+            {
+                b.Text = "X";
+            }
+            else
+            {
+                b.Text = "O";
+            }
+            cambio = !cambio;
+            b.Enabled = false;
+            Partida();
+        }
+
+        private void Partida()
+        {
+            //Formas de Ganar Horizontal
+            if ((a1.Text == a2.Text) && (a2.Text == a3.Text) && (!a1.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+            else if ((b1.Text == b2.Text) && (b2.Text == b3.Text) && (!b1.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+            else if ((c1.Text == c2.Text) && (c2.Text == c3.Text) && (!c1.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+
+            //Formas de Ganar Vertical
+            if ((a1.Text == b1.Text) && (b1.Text == c1.Text) && (!a1.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+            else if ((a2.Text == b2.Text) && (b2.Text == c2.Text) && (!a2.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+            else if ((a3.Text == b3.Text) && (b3.Text == c3.Text) && (!a3.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+
+            //Formas de Ganar Diagonal
+            if ((a1.Text == b2.Text) && (b2.Text == c3.Text) && (!a1.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+            else if ((a3.Text == b2.Text) && (b2.Text == c1.Text) && (!a3.Enabled))
+            {
+                MessageBox.Show("Winner!");
+            }
+
+            //Empate
+            empate++;
+            if (empate == 9)
+            {
+                MessageBox.Show("Es un Empate!!", "Empate"
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Information);
+
+                OnOffBtn(true);
+                empate = 0;
+            }
+
         }
     }
 }
