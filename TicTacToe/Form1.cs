@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace TicTacToe
 {
 
-    public partial class Form1 : Form
+    public partial class TicTacToe : Form
     {
 
         //Variables para usar en cada metodo
@@ -22,7 +22,7 @@ namespace TicTacToe
         int ganadasX = 0;
         int ganadasO = 0;
 
-        public Form1()
+        public TicTacToe()
         {
             InitializeComponent();
         }

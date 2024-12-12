@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    partial class Form1
+    partial class TicTacToe
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -39,7 +39,9 @@
             this.c1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ptsPlayer2 = new System.Windows.Forms.Label();
             this.btnReiniciar = new System.Windows.Forms.Button();
+            this.ptsPlayer1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNewGame = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.Player1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ptsPlayer1 = new System.Windows.Forms.Label();
-            this.ptsPlayer2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +68,7 @@
             // 
             // a1
             // 
+            this.a1.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a1.Location = new System.Drawing.Point(2, 1);
             this.a1.Name = "a1";
             this.a1.Size = new System.Drawing.Size(90, 90);
@@ -77,6 +78,7 @@
             // 
             // a2
             // 
+            this.a2.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a2.Location = new System.Drawing.Point(98, 1);
             this.a2.Name = "a2";
             this.a2.Size = new System.Drawing.Size(90, 90);
@@ -86,6 +88,7 @@
             // 
             // a3
             // 
+            this.a3.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a3.Location = new System.Drawing.Point(194, 1);
             this.a3.Name = "a3";
             this.a3.Size = new System.Drawing.Size(90, 90);
@@ -95,6 +98,7 @@
             // 
             // b3
             // 
+            this.b3.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b3.Location = new System.Drawing.Point(194, 97);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(90, 90);
@@ -104,6 +108,7 @@
             // 
             // b2
             // 
+            this.b2.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b2.Location = new System.Drawing.Point(98, 97);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(90, 90);
@@ -113,6 +118,7 @@
             // 
             // b1
             // 
+            this.b1.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b1.Location = new System.Drawing.Point(2, 97);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(90, 90);
@@ -122,6 +128,7 @@
             // 
             // c3
             // 
+            this.c3.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c3.Location = new System.Drawing.Point(194, 193);
             this.c3.Name = "c3";
             this.c3.Size = new System.Drawing.Size(90, 90);
@@ -131,6 +138,7 @@
             // 
             // c2
             // 
+            this.c2.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c2.Location = new System.Drawing.Point(98, 193);
             this.c2.Name = "c2";
             this.c2.Size = new System.Drawing.Size(90, 90);
@@ -140,6 +148,7 @@
             // 
             // c1
             // 
+            this.c1.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1.Location = new System.Drawing.Point(2, 193);
             this.c1.Name = "c1";
             this.c1.Size = new System.Drawing.Size(90, 90);
@@ -190,6 +199,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Players";
             // 
+            // ptsPlayer2
+            // 
+            this.ptsPlayer2.AutoSize = true;
+            this.ptsPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.ptsPlayer2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ptsPlayer2.Location = new System.Drawing.Point(131, 417);
+            this.ptsPlayer2.Name = "ptsPlayer2";
+            this.ptsPlayer2.Size = new System.Drawing.Size(20, 22);
+            this.ptsPlayer2.TabIndex = 13;
+            this.ptsPlayer2.Text = "0";
+            this.ptsPlayer2.Visible = false;
+            // 
             // btnReiniciar
             // 
             this.btnReiniciar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +223,18 @@
             this.btnReiniciar.UseVisualStyleBackColor = true;
             this.btnReiniciar.Visible = false;
             this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            // 
+            // ptsPlayer1
+            // 
+            this.ptsPlayer1.AutoSize = true;
+            this.ptsPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.ptsPlayer1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ptsPlayer1.Location = new System.Drawing.Point(131, 196);
+            this.ptsPlayer1.Name = "ptsPlayer1";
+            this.ptsPlayer1.Size = new System.Drawing.Size(20, 22);
+            this.ptsPlayer1.TabIndex = 12;
+            this.ptsPlayer1.Text = "0";
+            this.ptsPlayer1.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -373,31 +406,7 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Tic Tac Toe";
             // 
-            // ptsPlayer1
-            // 
-            this.ptsPlayer1.AutoSize = true;
-            this.ptsPlayer1.BackColor = System.Drawing.Color.Transparent;
-            this.ptsPlayer1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ptsPlayer1.Location = new System.Drawing.Point(131, 196);
-            this.ptsPlayer1.Name = "ptsPlayer1";
-            this.ptsPlayer1.Size = new System.Drawing.Size(20, 22);
-            this.ptsPlayer1.TabIndex = 12;
-            this.ptsPlayer1.Text = "0";
-            this.ptsPlayer1.Visible = false;
-            // 
-            // ptsPlayer2
-            // 
-            this.ptsPlayer2.AutoSize = true;
-            this.ptsPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.ptsPlayer2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ptsPlayer2.Location = new System.Drawing.Point(131, 417);
-            this.ptsPlayer2.Name = "ptsPlayer2";
-            this.ptsPlayer2.Size = new System.Drawing.Size(20, 22);
-            this.ptsPlayer2.TabIndex = 13;
-            this.ptsPlayer2.Text = "0";
-            this.ptsPlayer2.Visible = false;
-            // 
-            // Form1
+            // TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -410,9 +419,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "TicTacToe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "TicTacToe";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
