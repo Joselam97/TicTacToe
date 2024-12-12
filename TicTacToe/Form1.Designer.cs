@@ -39,6 +39,8 @@
             this.c1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReiniciar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.txtUser2 = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ptsPlayer1 = new System.Windows.Forms.Label();
             this.ptsPlayer2 = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnReiniciar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,7 +167,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.ptsPlayer2);
             this.groupBox1.Controls.Add(this.btnReiniciar);
+            this.groupBox1.Controls.Add(this.ptsPlayer1);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnNewGame);
@@ -187,6 +189,32 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Players";
+            // 
+            // btnReiniciar
+            // 
+            this.btnReiniciar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReiniciar.Location = new System.Drawing.Point(163, 467);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(99, 35);
+            this.btnReiniciar.TabIndex = 11;
+            this.btnReiniciar.Text = "Restart";
+            this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.Visible = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpiar.Location = new System.Drawing.Point(23, 467);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(99, 35);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Text = "Clean";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Visible = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // pictureBox1
             // 
@@ -348,46 +376,26 @@
             // ptsPlayer1
             // 
             this.ptsPlayer1.AutoSize = true;
-            this.ptsPlayer1.Location = new System.Drawing.Point(365, 160);
+            this.ptsPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.ptsPlayer1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ptsPlayer1.Location = new System.Drawing.Point(131, 196);
             this.ptsPlayer1.Name = "ptsPlayer1";
-            this.ptsPlayer1.Size = new System.Drawing.Size(13, 13);
+            this.ptsPlayer1.Size = new System.Drawing.Size(20, 22);
             this.ptsPlayer1.TabIndex = 12;
             this.ptsPlayer1.Text = "0";
+            this.ptsPlayer1.Visible = false;
             // 
             // ptsPlayer2
             // 
             this.ptsPlayer2.AutoSize = true;
-            this.ptsPlayer2.Location = new System.Drawing.Point(365, 352);
+            this.ptsPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.ptsPlayer2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ptsPlayer2.Location = new System.Drawing.Point(131, 417);
             this.ptsPlayer2.Name = "ptsPlayer2";
-            this.ptsPlayer2.Size = new System.Drawing.Size(13, 13);
+            this.ptsPlayer2.Size = new System.Drawing.Size(20, 22);
             this.ptsPlayer2.TabIndex = 13;
             this.ptsPlayer2.Text = "0";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLimpiar.Location = new System.Drawing.Point(23, 467);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(99, 35);
-            this.btnLimpiar.TabIndex = 10;
-            this.btnLimpiar.Text = "Clean";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Visible = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnReiniciar
-            // 
-            this.btnReiniciar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnReiniciar.Location = new System.Drawing.Point(163, 467);
-            this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(99, 35);
-            this.btnReiniciar.TabIndex = 11;
-            this.btnReiniciar.Text = "Restart";
-            this.btnReiniciar.UseVisualStyleBackColor = true;
-            this.btnReiniciar.Visible = false;
-            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            this.ptsPlayer2.Visible = false;
             // 
             // Form1
             // 
@@ -397,8 +405,6 @@
             this.BackgroundImage = global::TicTacToe.Properties.Resources.abstract_blur_gradient_background_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(708, 557);
-            this.Controls.Add(this.ptsPlayer2);
-            this.Controls.Add(this.ptsPlayer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);

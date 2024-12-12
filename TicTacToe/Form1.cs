@@ -180,6 +180,9 @@ namespace TicTacToe
             Player1.Text = txtUser1.Text;
             Player2.Text = txtUser2.Text;
 
+            ptsPlayer1.Visible = true;
+            ptsPlayer2.Visible = true;
+
             groupBox1.Text = "Score";
 
             btnLimpiar.Visible = true;
@@ -197,9 +200,56 @@ namespace TicTacToe
             OnOffBtn(true);
         }
 
+        //Reinicia el juego, ocultando y mostrando ciertos botones nuevamente
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
+            // Limpia el tablero y desactiva los botones
+            Limpiar();
+            OnOffBtn(false);
 
+            // Oculta botones de limpieza y reinicio
+            btnLimpiar.Visible = false;
+            btnReiniciar.Visible = false;
+
+            // Restablece cuadros de texto y nombres de jugadores
+            txtUser1.Visible = true;
+            txtUser2.Visible = true;
+            txtUser1.Text = "";
+            txtUser2.Text = "";
+
+            // Restablece variables de puntajes y estados
+            playerX = "";
+            playerO = "";
+            ganadasX = 0;
+            ganadasO = 0;
+            empate = 0;
+            cambio = true;
+
+            // Restablece las etiquetas de puntajes
+            ptsPlayer1.Text = "0";
+            ptsPlayer2.Text = "0";
+            Player1.Text = "";
+            Player2.Text = "";
+
+            // Habilita nuevamente la selección de signos
+            RbUser1O.Enabled = true;
+            RbUser2X.Enabled = true;
+            RbUser1X.Enabled = true;
+            RbUser2O.Enabled = true;
+
+            // Desmarca los radio buttons de selección de signos
+            RbUser1X.Checked = false;
+            RbUser1O.Checked = false;
+            RbUser2X.Checked = false;
+            RbUser2O.Checked = false;
+
+            // Oculta puntajes y reinicia el grupo de jugadores
+            ptsPlayer1.Visible = false;
+            ptsPlayer2.Visible = false;
+            groupBox1.Text = "Players";
+
+            // Restablece el botón para empezar un nuevo juego
+            btnNewGame.Visible = true;
         }
 
         //Representa todos los botones
@@ -331,10 +381,12 @@ namespace TicTacToe
             c3.Text = "";
         }
 
+        //Limpia los botones y da valor 0 a empate
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
-
+            OnOffBtn(true);
+            empate = 0;
         }
     }
 }
