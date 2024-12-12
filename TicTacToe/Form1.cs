@@ -92,7 +92,7 @@ namespace TicTacToe
             if (txtUser1.Text == "" && txtUser2.Text == "")
             {
                 //Mensaje de advertencia
-                MessageBox.Show("El nombre de los jugadores no puede ser null", "Nombre invalido"
+                MessageBox.Show("The Players' name cannot be null", "Invalid Name"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
             }
@@ -102,13 +102,13 @@ namespace TicTacToe
             {
                 if (txtUser1.Text == "")
                 {
-                    MessageBox.Show("El nombre del Player1 no puede ser null", "Nombre invalido"
+                    MessageBox.Show("The Player1's name cannot be null", "Invalid Name"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 }
                 if (txtUser2.Text == "")
                 {
-                    MessageBox.Show("El nombre del Player2 no puede ser null", "Nombre invalido"
+                    MessageBox.Show("The Player2's name cannot be null", "Invalid Name"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 }
@@ -152,7 +152,7 @@ namespace TicTacToe
                 if (RbUser1X.Checked && RbUser2X.Checked)
                 {
                     //Mensaje de advertencia
-                    MessageBox.Show("Solo un jugador puede escoger la letra X", "Escoja una letra diferente"
+                    MessageBox.Show("Only one Player can choose the X symbol", "Choose a different letter"
                    , MessageBoxButtons.OK
                    , MessageBoxIcon.Information);
                 }
@@ -161,7 +161,7 @@ namespace TicTacToe
                 if (RbUser1O.Checked && RbUser2O.Checked)
                 {
                     //Mensaje de advertencia
-                    MessageBox.Show("Solo un jugador puede escoger la letra O", "Escoja una letra diferente"
+                    MessageBox.Show("Only one Player can choose the O symbol", "Choose a different letter"
                    , MessageBoxButtons.OK
                    , MessageBoxIcon.Information);
                 }
@@ -170,7 +170,7 @@ namespace TicTacToe
                 if (!RbUser2X.Checked && !RbUser2O.Checked)
                 {
                     //Mensaje de advertencia
-                    MessageBox.Show("Player 2 debe escoger una letra", "Escoja una letra"
+                    MessageBox.Show("The Player 2 has to choose a symbol", "Choose a letter"
                    , MessageBoxButtons.OK
                    , MessageBoxIcon.Information);
                 }
@@ -196,7 +196,7 @@ namespace TicTacToe
             txtUser2.Visible = false;
 
             //Mensaje de advertencia
-            MessageBox.Show("Empieza " + playerX, "Informacion"
+            MessageBox.Show(playerX + " Starts!", "Information"
            , MessageBoxButtons.OK
            , MessageBoxIcon.Information);
 
@@ -316,7 +316,7 @@ namespace TicTacToe
             empate++;
             if (empate == 9)
             {
-                MessageBox.Show("Es un Empate!!", "Empate"
+                MessageBox.Show("It's a tie!!", "Tie"
                 , MessageBoxButtons.OK
                 , MessageBoxIcon.Information);
 
