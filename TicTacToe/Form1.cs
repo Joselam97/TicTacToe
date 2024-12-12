@@ -142,6 +142,9 @@ namespace TicTacToe
                     //Desactiva el otro signo que no se escogio
                     RbUser1X.Enabled = false;
                     RbUser2O.Enabled = false;
+
+                    //Inicializa el juego
+                    PlayGame();
                 }
 
 
