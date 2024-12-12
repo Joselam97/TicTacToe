@@ -14,10 +14,13 @@ namespace TicTacToe
     public partial class Form1 : Form
     {
 
+        //Variables para usar en cada metodo
         string playerX = "";
         string playerO = "";
         bool cambio = true;
         int empate = 0;
+        int ganadasX = 0;
+        int ganadasO = 0;
 
         public Form1()
         {
@@ -160,12 +163,11 @@ namespace TicTacToe
                    , MessageBoxIcon.Information);
                 }
 
-
                 //En caso de no seleccionar signo, primer escenario
-                if (RbUser1X.Checked == false && RbUser2O.Checked == false || RbUser2X.Checked == false && RbUser1O.Checked == false)
+                if (!RbUser2X.Checked && !RbUser2O.Checked)
                 {
                     //Mensaje de advertencia
-                    MessageBox.Show("Cada jugador debe seleccionar una letra", "Escoja una letra"
+                    MessageBox.Show("Player 2 debe escoger una letra", "Escoja una letra"
                    , MessageBoxButtons.OK
                    , MessageBoxIcon.Information);
                 }
@@ -222,39 +224,39 @@ namespace TicTacToe
             //Formas de Ganar Horizontal
             if ((a1.Text == a2.Text) && (a2.Text == a3.Text) && (!a1.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(a1);
             }
             else if ((b1.Text == b2.Text) && (b2.Text == b3.Text) && (!b1.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(b1);
             }
             else if ((c1.Text == c2.Text) && (c2.Text == c3.Text) && (!c1.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(c1);
             }
 
             //Formas de Ganar Vertical
             if ((a1.Text == b1.Text) && (b1.Text == c1.Text) && (!a1.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(a1);
             }
             else if ((a2.Text == b2.Text) && (b2.Text == c2.Text) && (!a2.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(a2);
             }
             else if ((a3.Text == b3.Text) && (b3.Text == c3.Text) && (!a3.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(a3);
             }
 
             //Formas de Ganar Diagonal
             if ((a1.Text == b2.Text) && (b2.Text == c3.Text) && (!a1.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(a1);
             }
             else if ((a3.Text == b2.Text) && (b2.Text == c1.Text) && (!a3.Enabled))
             {
-                MessageBox.Show("Winner!");
+                Validacion(a3);
             }
 
             //Empate
@@ -265,9 +267,73 @@ namespace TicTacToe
                 , MessageBoxButtons.OK
                 , MessageBoxIcon.Information);
 
+                Limpiar();
+
                 OnOffBtn(true);
                 empate = 0;
             }
+
+        }
+
+        //Metodo para validar un ganador
+        public void Validacion(Button b)
+        {
+            empate = -1;
+
+            if (b.Text == "X")
+            {
+                MessageBox.Show("The Winner is " + playerX
+                    , " Congratulations!"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                //Suma 1 cada vez que X gana
+                ganadasX++;
+            }
+            else if (b.Text == "O")
+            {
+                MessageBox.Show("The Winner is " + playerO
+                    , " Congratulations!"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                //Suma 1 cada vez que O gana
+                ganadasO++;
+            }
+
+
+            if (RbUser1X.Checked && RbUser2O.Checked)
+            {
+                ptsPlayer1.Text = ganadasX.ToString();
+                ptsPlayer2.Text = ganadasO.ToString();
+            }
+
+            if (RbUser1O.Checked && RbUser2X.Checked)
+            {
+                ptsPlayer1.Text = ganadasO.ToString();
+                ptsPlayer2.Text = ganadasX.ToString();
+            }
+
+            //Cuando todo lo anterior se cumpla, se limpian las casillas 
+            Limpiar();
+            OnOffBtn(true); //Se activa boton On/Off
+        }
+
+        //Limpia los simbolos en cada cuadro
+        private void Limpiar()
+        {
+            a1.Text = "";
+            a2.Text = "";
+            a3.Text = "";
+            b1.Text = "";
+            b2.Text = "";
+            b3.Text = "";
+            c1.Text = "";
+            c2.Text = "";
+            c3.Text = "";
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
 
         }
     }
